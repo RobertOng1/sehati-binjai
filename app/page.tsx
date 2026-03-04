@@ -1,65 +1,140 @@
+import Link from "next/link";
 import Image from "next/image";
+import { categories } from "@/lib/content-data";
 
-export default function Home() {
+const categoryIcons: Record<string, string> = {
+  "ibu-hamil": "pregnant_woman",
+  baduta: "child_care",
+  mpasi: "restaurant",
+  "info-tambahan": "info",
+};
+
+const categoryColors: Record<string, string> = {
+  "ibu-hamil": "#e8f5ee",
+  baduta: "#e0f2fe",
+  mpasi: "#fef3c7",
+  "info-tambahan": "#f3e8ff",
+};
+
+const categoryIconColors: Record<string, string> = {
+  "ibu-hamil": "#106140",
+  baduta: "#0284c7",
+  mpasi: "#d97706",
+  "info-tambahan": "#7c3aed",
+};
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="pb-4">
+      {/* Header */}
+      <div className="flex items-center gap-3 px-5 pt-5 pb-3">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+          src="/app-logo-192-px.png"
+          alt="Sehati Binjai"
+          width={40}
+          height={40}
+          className="rounded-full"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div>
+          <h1 className="text-lg font-bold text-gray-900">Sehati Binjai</h1>
+          <div className="flex items-center gap-1.5">
+            <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse-soft" />
+            <span className="text-xs font-medium text-green-600">ONLINE</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Hero Banner */}
+      <div className="mx-4 mt-2 overflow-hidden rounded-2xl bg-gradient-to-br from-[#106140] to-[#1a8a5a] p-6 relative">
+        <div className="relative z-10">
+          <h2 className="text-2xl font-extrabold text-white leading-tight">
+            Selamat Datang, <br />
+            Bunda!
+          </h2>
+          <p className="mt-2 text-sm text-white/80 leading-relaxed max-w-[220px]">
+            Pantau perkembangan buah hati dan cegah stunting bersama kami.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/kalkulator"
+            className="mt-4 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-[#106140] shadow-md transition-transform hover:scale-[1.02] press-effect"
           >
+            <span className="material-symbols-outlined text-[18px]">
+              calculate
+            </span>
+            Cek Status Gizi Anak
+          </Link>
+        </div>
+        {/* Decorative circles */}
+        <div className="absolute -right-6 -top-6 h-32 w-32 rounded-full bg-white/10" />
+        <div className="absolute -right-2 bottom-0 h-24 w-24 rounded-full bg-white/5" />
+        <div className="absolute right-8 top-8 h-16 w-16 rounded-full bg-white/5" />
+      </div>
+
+      {/* Category Grid */}
+      <div className="px-4 mt-6">
+        <h3 className="text-base font-bold text-gray-900">Layanan Utama</h3>
+        <div className="mt-3 grid grid-cols-2 gap-3">
+          {categories.map((cat) => (
+            <Link
+              key={cat.slug}
+              href={`/kategori/${cat.slug}`}
+              className="card-hover press-effect flex flex-col items-start gap-3 rounded-2xl bg-white p-4 shadow-sm border border-gray-50"
+            >
+              <div
+                className="flex h-11 w-11 items-center justify-center rounded-xl"
+                style={{ backgroundColor: categoryColors[cat.slug] }}
+              >
+                <span
+                  className="material-symbols-outlined text-[22px]"
+                  style={{ color: categoryIconColors[cat.slug] }}
+                >
+                  {categoryIcons[cat.slug]}
+                </span>
+              </div>
+              <span className="text-sm font-semibold text-gray-800">
+                {cat.name}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Microgreen CTA */}
+      <div className="px-4 mt-6">
+        <h3 className="text-base font-bold text-gray-900">
+          Budidaya Microgreens
+        </h3>
+        <p className="text-xs text-gray-500 mt-0.5">
+          Kebutuhan nutrisi dari rumah sendiri
+        </p>
+        <Link
+          href="/microgreen"
+          className="mt-3 block overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-50 card-hover press-effect"
+        >
+          <div className="relative h-44 w-full bg-gradient-to-b from-[#106140]/10 to-[#106140]/5">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/microgreen/tools-and-ingridients.jpeg"
+              alt="Panduan Menanam Microgreens"
+              fill
+              className="object-cover"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+          </div>
+          <div className="p-4">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#106140]">
+              Edukasi
+            </span>
+            <p className="mt-1 text-sm font-bold text-gray-900">
+              Panduan Menanam Microgreens
+            </p>
+            <div className="mt-2 flex items-center gap-1 text-[#106140] text-xs font-semibold">
+              <span>Lihat Panduan</span>
+              <span className="material-symbols-outlined text-[16px]">
+                chevron_right
+              </span>
+            </div>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 }

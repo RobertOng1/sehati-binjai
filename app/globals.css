@@ -1,26 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --tanoto-green: #106140;
+  --tanoto-green-light: #1a8a5a;
+  --tanoto-green-dark: #0a4a30;
+  --tanoto-green-50: #e8f5ee;
+  --tanoto-green-100: #d1ebdd;
+  --bg-light: #f6f8f7;
+  --bg-white: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #64748b;
+  --status-normal: #16a34a;
+  --status-risk: #f59e0b;
+  --status-stunting: #f97316;
+  --status-severe: #ef4444;
+  --nav-height: 72px;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg-white);
+  --color-foreground: var(--text-primary);
+  --color-tanoto: var(--tanoto-green);
+  --color-tanoto-light: var(--tanoto-green-light);
+  --color-tanoto-dark: var(--tanoto-green-dark);
+  --color-tanoto-50: var(--tanoto-green-50);
+  --color-tanoto-100: var(--tanoto-green-100);
+  --color-bg-light: var(--bg-light);
+  --color-text-secondary: var(--text-secondary);
+  --color-status-normal: var(--status-normal);
+  --color-status-risk: var(--status-risk);
+  --color-status-stunting: var(--status-stunting);
+  --color-status-severe: var(--status-severe);
+  --font-sans: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background: var(--bg-light);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Mobile-first container */
+.app-container {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--bg-white);
+  min-height: 100dvh;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
+}
+
+/* Page content — account for bottom nav */
+.page-content {
+  padding-bottom: calc(var(--nav-height) + 16px);
+  min-height: 100dvh;
+}
+
+/* Touch targets */
+button,
+a,
+[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Scrollbar hiding for horizontal scrolls */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Status badge colors */
+.badge-normal {
+  background: #dcfce7;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+.badge-risk {
+  background: #fef3c7;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.badge-stunting {
+  background: #ffedd5;
+  color: #ea580c;
+  border: 1px solid #fed7aa;
+}
+
+.badge-severe {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+/* Subtle animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Glass effect for nav */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 97, 64, 0.1);
+}
+
+/* Active press effect */
+.press-effect:active {
+  transform: scale(0.97);
+  transition: transform 0.1s ease;
 }
