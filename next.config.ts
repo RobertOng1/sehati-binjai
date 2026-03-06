@@ -6,10 +6,43 @@ const withPWA = withPWAInit({
   register: true,
   skipWaiting: true,
   disable: process.env.NODE_ENV === "development",
+  cacheOnFrontEndNav: true,
+  aggressiveFrontEndNavCaching: true,
+  reloadOnOnline: true,
   fallbacks: {
     document: "/offline",
   },
+  // Explicitly inject these pages into the precache manifest
+  // so they are available offline immediately after PWA install.
+  additionalManifestEntries: [
+    { url: "/", revision: "1" },
+    { url: "/kalkulator", revision: "1" },
+    { url: "/microgreen", revision: "1" },
+    { url: "/tentang", revision: "1" },
+  ],
   runtimeCaching: [
+    {
+      urlPattern: /^\/(_next\/data\/.*\/)?(kalkulator|microgreen|tentang|)\.json$/,
+      handler: "StaleWhileRevalidate",
+      options: {
+        cacheName: "next-data",
+        expiration: {
+          maxEntries: 50,
+          maxAgeSeconds: 30 * 24 * 60 * 60,
+        },
+      },
+    },
+    {
+      urlPattern: /^\/(kalkulator|microgreen|tentang)(\/.*)?$/,
+      handler: "NetworkFirst",
+      options: {
+        cacheName: "offline-pages",
+        expiration: {
+          maxEntries: 20,
+          maxAgeSeconds: 30 * 24 * 60 * 60,
+        },
+      },
+    },
     {
       urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
       handler: "CacheFirst",
