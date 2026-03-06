@@ -93,7 +93,7 @@ export default function HomePage() {
                 className="card-hover press-effect flex flex-col items-start gap-3 rounded-2xl bg-white p-5 shadow-sm border border-gray-100"
               >
                 <div
-                  className="!ml-4 !mt-4 flex h-12 w-12 items-center justify-center rounded-xl"
+                  className="!ml-3 !mt-3 flex h-12 w-12 items-center justify-center rounded-xl"
                   style={{ backgroundColor: categoryColors[cat.slug] }}
                 >
                   <span
@@ -139,7 +139,7 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-5 md:p-8 md:flex md:flex-col md:justify-center md:flex-1">
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#106140]">
+                <span className="!px-0 !mx-0 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#106140]">
                   <span className="material-symbols-outlined text-[14px]">menu_book</span>
                   Edukasi
                 </span>
@@ -151,7 +151,7 @@ export default function HomePage() {
                   hingga 40 kali lipat lebih tinggi dari sayuran dewasa. Pelajari
                   langkah mudah menanamnya di dalam rumah.
                 </p>
-                <div className="mt-3 md:mt-4 flex items-center gap-1 text-[#106140] text-sm font-semibold">
+                <div className="!px-0 !mx-0 mt-3 md:mt-4 flex items-center gap-1 text-[#106140] text-sm font-semibold">
                   <span>Lihat Panduan Lengkap</span>
                   <span className="material-symbols-outlined text-[18px]">
                     arrow_forward

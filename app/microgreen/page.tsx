@@ -47,7 +47,7 @@ export default function MicrogreenPage() {
                     <h3 className="text-lg font-bold text-gray-900 mb-5">
                         Alat dan Bahan
                     </h3>
-                    <div className="grid grid-cols-3 md:grid-cols-3 gap-3">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                         {tools.map((tool, index) => (
                             <div
                                 key={index}
@@ -100,16 +100,16 @@ export default function MicrogreenPage() {
                 </div>
 
                 {/* Steps */}
-                <div className="px-6 mt-12 md:px-0">
+                <div className="!mx-0 !px-0 mt-12 md:px-0">
                     <h3 className="text-lg font-bold text-gray-900 mb-6">
                         Langkah-Langkah
                     </h3>
-                    <div className="relative">
-                        <div className="flex flex-col gap-6">
+                    <div className="!mx-0 !px-0 relative">
+                        <div className="flex flex-col gap-0">
                             {steps.map((step, index) => (
                                 <div
                                     key={step.number}
-                                    className="relative animate-fade-in-up"
+                                    className="!mx-0 !px-0 relative animate-fade-in-up"
                                     style={{ animationDelay: `${index * 80}ms` }}
                                 >
                                     <div className="flex gap-4 items-start">
@@ -153,7 +153,7 @@ export default function MicrogreenPage() {
                                             )}
 
                                             {step.images.length === 0 && (
-                                                <div className="mt-4 flex items-center gap-2.5 rounded-xl bg-blue-50 p-3.5">
+                                                <div className="mt-4 flex items-center gap-2 rounded-xl bg-blue-50 p-3.5">
                                                     <span className="material-symbols-outlined text-blue-500 text-[20px]">
                                                         water_drop
                                                     </span>

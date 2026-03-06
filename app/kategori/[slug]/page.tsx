@@ -87,16 +87,16 @@ export default function CategoryPage() {
                                 href={article.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-start gap-4 p-5 bg-white rounded-2xl hover:bg-[#106140]/5 transition-colors text-left animate-fade-in-up border border-gray-100 shadow-sm"
+                                className="flex items-start gap-1 p-5 bg-white rounded-2xl hover:bg-[#106140]/5 transition-colors text-left animate-fade-in-up border border-gray-100 shadow-sm"
                                 style={{ animationDelay: `${index * 60}ms` }}
                             >
                                 <div className="shrink-0">
-                                    <div className="relative h-28 w-28 rounded-xl overflow-hidden bg-gray-100">
+                                    <div className="relative h-20 w-20 rounded-xl overflow-hidden bg-gray-100">
                                         <Image
                                             src={article.image}
                                             alt={article.title}
                                             fill
-                                            sizes="112px"
+                                            sizes="80px"
                                             className="object-cover"
                                             loading="lazy"
                                         />

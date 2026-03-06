@@ -191,8 +191,8 @@ export default function KalkulatorPage() {
                                     )}
                                 </div>
                                 <div>
-                                    <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                                        Tinggi Badan (CM)
+                                    <label className="text-xs font-semibold text-gray-500 tracking-wider">
+                                        TINGGI BADAN (cm)
                                     </label>
                                     <div className="relative mt-2.5">
                                         <input
@@ -210,7 +210,7 @@ export default function KalkulatorPage() {
                                             placeholder="Contoh: 75.5"
                                             className="w-full h-12 rounded-xl border border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#106140]/30 focus:border-[#106140]"
                                         />
-                                        <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-400">CM</span>
+                                        <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-400">cm</span>
                                     </div>
                                 </div>
                             </div>

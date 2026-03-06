@@ -76,7 +76,7 @@ export default function InstallPrompt() {
                         </span>
                     </div>
                     <div className="flex-1">
-                        <p className="text-sm font-semibold text-gray-900">
+                        <p className="!pt-0 !mt-0 text-sm font-semibold text-gray-900">
                             Tambah ke Layar Beranda
                         </p>
                         <p className="text-xs text-gray-500 mt-0.5">
