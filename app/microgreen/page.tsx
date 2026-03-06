@@ -40,8 +40,7 @@ export default function MicrogreenPage() {
                         Cara Menanam Microgreen
                     </h2>
                     <p className="mt-4 text-sm md:text-base text-gray-500 leading-relaxed md:max-w-xl">
-                        Tahukah kamu? Microgreen memiliki konsentrasi nutrisi hingga <b>40 kali lipat</b> lebih tinggi dibandingkan sayuran dewasa, 
-                        menjadikannya solusi pangan padat gizi yang efektif untuk mencegah stunting pada anak.
+                        Tahukah kamu? Microgreen memiliki konsentrasi nutrisi hingga 40 kali lipat lebih tinggi dibandingkan sayuran dewasa, menjadikannya solusi pangan padat gizi yang efektif untuk mencegah stunting pada anak.
                     </p>
                 </div>
 
