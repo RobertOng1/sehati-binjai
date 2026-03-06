@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import BottomNav from "@/components/BottomNav";
 import SideNav from "@/components/SideNav";
 import InstallPrompt from "@/components/InstallPrompt";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -92,6 +93,7 @@ export default function RootLayout({
           <BottomNav />
           <InstallPrompt />
         </div>
+        <Analytics />
       </body>
     </html>
   );
