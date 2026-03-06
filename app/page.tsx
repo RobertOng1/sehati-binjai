@@ -66,7 +66,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/kalkulator"
-              className="mt-5 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#106140] shadow-md transition-transform hover:scale-[1.02] press-effect"
+              className="mt-5 !pr-4 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#106140] shadow-md transition-transform hover:scale-[1.02] press-effect"
             >
               <span className="material-symbols-outlined text-[18px]">
                 calculate
@@ -93,7 +93,7 @@ export default function HomePage() {
                 className="card-hover press-effect flex flex-col items-start gap-3 rounded-2xl bg-white p-5 shadow-sm border border-gray-100"
               >
                 <div
-                  className="flex h-12 w-12 items-center justify-center rounded-xl"
+                  className="!ml-4 !mt-4 flex h-12 w-12 items-center justify-center rounded-xl"
                   style={{ backgroundColor: categoryColors[cat.slug] }}
                 >
                   <span

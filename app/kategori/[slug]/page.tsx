@@ -56,15 +56,12 @@ export default function CategoryPage() {
                     {/* Search Bar */}
                     <div className="px-5 pb-4 md:px-0">
                         <div className="relative">
-                            <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#106140]/40 text-[20px]">
-                                search
-                            </span>
                             <input
                                 type="text"
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
                                 placeholder="Cari artikel edukasi..."
-                                className="w-full h-12 rounded-xl bg-[#106140]/5 border-none pl-12 pr-4 text-sm placeholder:text-[#106140]/40 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#106140]/30"
+                                className="w-full h-12 rounded-xl bg-[#106140]/5 border-none !px-4 text-sm placeholder:text-[#106140]/40 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#106140]/30"
                             />
                         </div>
                     </div>

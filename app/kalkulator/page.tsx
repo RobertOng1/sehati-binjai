@@ -104,13 +104,13 @@ export default function KalkulatorPage() {
                 </div>
             </div>
 
-            <div className="content-wrapper">
+            <div className="content-wrapper !mt-0 !pt-0">
                 {/* Desktop: two-column layout using flex */}
-                <div className="md:flex md:gap-8 md:items-start">
+                <div className="md:flex md:gap-8 md:items-start !mt-0 !pt-0">
                     {/* Left column: Form + Result + Tips */}
-                    <div className="md:flex-1 md:min-w-0">
+                    <div className="md:flex-1 md:min-w-0 !mt-0 !pt-0">
                         {/* Calculator Form */}
-                        <div className="mx-5 mt-5 md:mx-0 md:mt-0 rounded-2xl bg-white p-6 md:p-8 shadow-sm border border-gray-100">
+                        <div className="mx-5 mt-0 md:mx-0 md:mt-0 rounded-2xl bg-white p-6 md:p-8 shadow-sm border border-gray-100">
                             <div className="flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#106140]/10">
                                     <span className="material-symbols-outlined text-[#106140] text-[20px]">
@@ -132,7 +132,7 @@ export default function KalkulatorPage() {
                                 <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
                                     Jenis Kelamin
                                 </label>
-                                <div className="mt-2.5 flex rounded-xl bg-gray-100 p-1.5">
+                                <div className="mt-2.5 flex flex-col sm:flex-row gap-1 sm:gap-0 rounded-xl bg-gray-100 p-1.5">
                                     <button
                                         onClick={() => setGender("male")}
                                         className={`flex-1 flex items-center justify-center gap-2 rounded-lg py-3 text-sm font-semibold transition-all ${gender === "male"
@@ -157,7 +157,7 @@ export default function KalkulatorPage() {
                             </div>
 
                             {/* Age and Height Inputs */}
-                            <div className="mt-5 grid grid-cols-2 gap-4">
+                            <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
                                         Usia (Bulan)
@@ -281,7 +281,7 @@ export default function KalkulatorPage() {
                                     <p className="text-sm font-bold text-amber-900">Tips Pengukuran</p>
                                     <p className="mt-1.5 text-sm text-amber-800/80 leading-relaxed">
                                         Bagi anak berusia di bawah 2 tahun, posisikan anak berbaring terlentang sebelum mengambil pengukuran.
-                                        <br/>Bagi anak berusia di atas 2 tahun, pastikan anak diukur tanpa alas kaki dan berdiri tegak 
+                                        <br />Bagi anak berusia di atas 2 tahun, pastikan anak diukur tanpa alas kaki dan berdiri tegak
                                         menempel pada alat ukur untuk hasil yang lebih akurat.
                                     </p>
                                 </div>

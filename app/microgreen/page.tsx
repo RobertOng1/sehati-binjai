@@ -15,20 +15,18 @@ export default function MicrogreenPage() {
             {/* Header */}
             <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-md border-b border-gray-100">
                 <div className="content-wrapper">
-                    <div className="flex items-center justify-between px-5 py-4 md:px-0">
-                        <div className="flex items-center gap-3">
-                            <Link
-                                href="/"
-                                className="flex items-center justify-center p-2 rounded-full hover:bg-[#106140]/10 text-[#106140] transition-colors"
-                            >
-                                <span className="material-symbols-outlined">
-                                    arrow_back_ios_new
-                                </span>
-                            </Link>
-                            <h1 className="text-lg font-bold text-gray-900">
-                                Panduan Microgreen
-                            </h1>
-                        </div>
+                    <div className="flex items-center gap-3 px-5 py-4 md:px-0">
+                        <Link
+                            href="/"
+                            className="flex items-center justify-center p-2 rounded-full hover:bg-[#106140]/10 text-[#106140] transition-colors"
+                        >
+                            <span className="material-symbols-outlined">
+                                arrow_back_ios_new
+                            </span>
+                        </Link>
+                        <h1 className="text-lg font-bold text-gray-900">
+                            Panduan Microgreen
+                        </h1>
                     </div>
                 </div>
             </div>

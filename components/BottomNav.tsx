@@ -20,8 +20,7 @@ export default function BottomNav() {
 
     return (
         <nav
-            className="fixed bottom-0 left-0 right-0 z-50 glass-nav border-t border-gray-100 md:hidden"
-            style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+            className="fixed !bottom-0 !left-0 !right-0 !m-0 z-50 glass-nav border-t border-gray-100 md:hidden"
         >
             <div className="flex items-stretch">
                 {tabs.map((tab) => {
