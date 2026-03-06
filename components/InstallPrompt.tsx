@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface BeforeInstallPromptEvent extends Event {
     prompt: () => Promise<void>;
@@ -12,6 +12,10 @@ export default function InstallPrompt() {
         useState<BeforeInstallPromptEvent | null>(null);
     const [isInstalled, setIsInstalled] = useState(false);
     const [isDismissed, setIsDismissed] = useState(false);
+
+    const [dragStyle, setDragStyle] = useState<React.CSSProperties | null>(null);
+    const promptRef = useRef<HTMLDivElement>(null);
+    const dragRef = useRef({ isDragging: false, startX: 0, startY: 0 });
 
     useEffect(() => {
         // Check if already installed (standalone mode)
@@ -63,12 +67,76 @@ export default function InstallPrompt() {
         localStorage.setItem("sehati-install-dismissed", "true");
     };
 
+    const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+        const target = e.target as HTMLElement;
+        if (target.closest("button")) return;
+
+        (e.target as Element).setPointerCapture(e.pointerId);
+        dragRef.current.isDragging = true;
+
+        if (promptRef.current) {
+            const rect = promptRef.current.getBoundingClientRect();
+            dragRef.current.startX = e.clientX - rect.left;
+            dragRef.current.startY = e.clientY - rect.top;
+
+            if (!dragStyle) {
+                setDragStyle({
+                    left: `${rect.left}px`,
+                    top: `${rect.top}px`,
+                    width: `${rect.width}px`,
+                    margin: 0,
+                    bottom: "auto",
+                    right: "auto",
+                });
+            }
+        }
+    };
+
+    const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+        if (!dragRef.current.isDragging) return;
+
+        let newX = e.clientX - dragRef.current.startX;
+        let newY = e.clientY - dragRef.current.startY;
+
+        if (promptRef.current) {
+            const rect = promptRef.current.getBoundingClientRect();
+            const maxX = window.innerWidth - rect.width;
+            const maxY = window.innerHeight - rect.height;
+            newX = Math.max(0, Math.min(newX, maxX));
+            newY = Math.max(0, Math.min(newY, maxY));
+        }
+
+        setDragStyle((prev) => ({
+            ...prev,
+            left: `${newX}px`,
+            top: `${newY}px`,
+        }));
+    };
+
+    const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+        dragRef.current.isDragging = false;
+        try {
+            (e.target as Element).releasePointerCapture(e.pointerId);
+        } catch (err) {
+            // Ignore if pointer is already released
+        }
+    };
+
     // Don't show if installed, dismissed, or no prompt available
     if (isInstalled || isDismissed || !deferredPrompt) return null;
 
     return (
-        <div className="animate-slide-up fixed bottom-20 left-4 right-4 z-40 mx-auto max-w-[448px] md:bottom-6 md:left-auto md:right-6 md:max-w-[360px]">
-            <div className="rounded-2xl bg-white p-4 shadow-lg border border-[#106140]/10">
+        <div
+            ref={promptRef}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
+            className={`fixed z-40 touch-none cursor-grab active:cursor-grabbing ${dragStyle ? "" : "animate-slide-up bottom-20 left-4 right-4 mx-auto max-w-[448px] md:bottom-6 md:left-auto md:right-6 md:max-w-[360px]"
+                }`}
+            style={dragStyle || {}}
+        >
+            <div className="rounded-2xl bg-white p-4 shadow-lg border border-[#106140]/10 h-full w-full">
                 <div className="flex items-start gap-3">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#106140]/10">
                         <span className="material-symbols-outlined text-[#106140]">
