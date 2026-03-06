@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import BottomNav from "@/components/BottomNav";
 import SideNav from "@/components/SideNav";
 import InstallPrompt from "@/components/InstallPrompt";
-import BackButtonHandler from "@/components/BackButtonHandler";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -93,7 +92,6 @@ export default function RootLayout({
           <main className="page-content">{children}</main>
           <BottomNav />
           <InstallPrompt />
-          <BackButtonHandler />
         </div>
         <Analytics />
       </body>
