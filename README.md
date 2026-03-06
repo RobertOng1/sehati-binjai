@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sehati Binjai
 
-## Getting Started
+![Sehati Binjai](public/thumbnail.png)
 
-First, run the development server:
+**Sehati Binjai** (*Sehat Ibu dan Anak Terintegrasi melalui Aplikasi dan Microgreen*) is an integrated health initiative (aligned with SDG 3) focused on stunting prevention through nutritional education and microgreen cultivation.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Developed as part of the **Lead Others 2024** program by **ZeroStunt — Tanoto Foundation**, in collaboration with **Dinas Kesehatan Kota Binjai**, this application provides easy and affordable access to health information for the people of Binjai.
+
+## 🚀 Key Features
+
+- **📊 Stunting Calculator**: A reliable tool to monitor child growth based on WHO Z-Score standards, processed locally for privacy.
+- **🌱 Microgreen Guide**: Step-by-step tutorials for cultivating nutritious microgreens at home.
+- **📚 Curated Content**: Expert-curated information for pregnant women, infants (*baduta*), and complementary foods (*MPASI*).
+- **📶 Offline-First Experience**: Progressive Web App (PWA) capabilities allowing access to core features without an internet connection.
+- **🔒 Privacy Focused**: No backend database or tracking; all calculation data stays on the user's device.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **PWA**: [next-pwa](https://github.com/shadowwalker/next-pwa)
+- **Icons**: [Lucide React](https://lucide.dev/)
+
+## 📦 Project Structure
+
+```text
+├── app/              # Next.js pages and routing
+├── components/       # Reusable UI components
+├── lib/              # Logic, calculation utilities, and static data
+├── public/           # Static assets (images, manifest, icons)
+└── types/            # TypeScript type definitions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js (Latest LTS recommended)
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/sehati-binjai.git
+   cd sehati-binjai
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌐 Live Demo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Visit the official website at: [https://sehati-binjai.my.id/](https://sehati-binjai.my.id/)
+
+## 🤝 Acknowledgments
+
+- **Tanoto Foundation** (ZeroStunt - Lead Others 2024)
+- **Dinas Kesehatan Kota Binjai**
+
+---
+*Built with ❤️ for a healthier Binjai.*

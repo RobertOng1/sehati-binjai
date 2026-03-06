@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -15,7 +14,8 @@
   --status-risk: #f59e0b;
   --status-stunting: #f97316;
   --status-severe: #ef4444;
-  --nav-height: 72px;
+  --nav-height: 76px;
+  --sidebar-width: 0px;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -37,8 +37,8 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
+  margin: 5;
+  padding: 5;
   box-sizing: border-box;
 }
 
@@ -48,7 +48,6 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
   background: var(--bg-light);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
@@ -58,24 +57,63 @@ body {
 
 /* Mobile-first container */
 .app-container {
-  max-width: 480px;
-  margin: 0 auto;
   background: var(--bg-white);
   min-height: 100dvh;
   position: relative;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
 }
 
-/* Page content — account for bottom nav */
+/* Page content — account for bottom nav on mobile */
 .page-content {
-  padding-bottom: calc(var(--nav-height) + 16px);
+  padding-bottom: calc(var(--nav-height) + 20px);
   min-height: 100dvh;
+  padding-top: 0;
 }
 
-/* Touch targets */
-button,
-a,
-[role="button"] {
+/* Desktop: sidebar layout */
+@media (min-width: 768px) {
+  :root {
+    --sidebar-width: 260px;
+  }
+
+  .app-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .page-content {
+    flex: 1;
+    padding-bottom: 32px;
+    margin-left: var(--sidebar-width);
+    max-width: calc(100vw - var(--sidebar-width));
+    padding-top: 0;
+  }
+}
+
+/* Content wrapper for centering page content on desktop */
+.content-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .content-wrapper {
+    max-width: 1120px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* Touch targets — only for interactive elements that need them */
+.touch-target {
   min-height: 44px;
   min-width: 44px;
 }
@@ -197,4 +235,27 @@ a,
 .press-effect:active {
   transform: scale(0.97);
   transition: transform 0.1s ease;
+}
+
+/* Section spacing utility */
+.section-spacing {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    margin-top: 2.5rem;
+  }
+}
+
+/* Hide spinners in Chrome, Safari, Edge, and Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spinners in Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

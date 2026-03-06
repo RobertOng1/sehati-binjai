@@ -49,6 +49,14 @@ const withPWA = withPWAInit({
 const nextConfig: NextConfig = {
   // Use webpack for build since next-pwa requires webpack plugin
   // This is needed for Next.js 16 which defaults to Turbopack
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
 };
 
 export default withPWA(nextConfig);

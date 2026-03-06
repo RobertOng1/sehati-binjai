@@ -1,7 +1,16 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import BottomNav from "@/components/BottomNav";
+import SideNav from "@/components/SideNav";
 import InstallPrompt from "@/components/InstallPrompt";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Sehati Binjai — Cegah Stunting, Wujudkan Generasi Sehat",
@@ -56,15 +65,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    <html lang="id" className={inter.variable}>
       <head>
+        {/* Preconnect to Google Fonts for Material Symbols */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        {/* Preload Material Symbols for faster icon loading */}
+        <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         />
       </head>
-      <body className="antialiased">
+      <body className={`${inter.className} antialiased`}>
         <div className="app-container">
+          <SideNav />
           <main className="page-content">{children}</main>
           <BottomNav />
           <InstallPrompt />
