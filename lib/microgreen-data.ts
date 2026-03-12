@@ -27,7 +27,6 @@ export const steps: MicrogreenStep[] = [
         images: [
             "/microgreen/step-01-1.jpeg",
             "/microgreen/step-01-2.jpeg",
-            "/microgreen/step-01-3.jpeg",
         ],
     },
     {

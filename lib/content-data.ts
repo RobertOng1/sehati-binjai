@@ -45,7 +45,7 @@ export const categories: Category[] = [
             },
             {
                 id: "ih-4",
-                title: "Kaitan Stunting Terhadap Kondisi Ibu Yang Mengalami Anemia Saat Hamil",
+                title: "Kaitan Stunting Terhadap Kondisi Ibu yang Mengalami Anemia Saat Hamil",
                 summary:
                     "Pencegahan stunting paling mendasar dimulai dari menjaga kecukupan gizi alami ibu di masa kehamilan demi melindungi 1000 Hari Pertama Kehidupan (HPK) anak.",
                 url: "https://www.alodokter.com/komunitas/topic/apakah-anak-yg-lahir-dengan-keadaan-ibu-yg-anemia-bisa",
