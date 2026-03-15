@@ -55,8 +55,9 @@ export default function TentangPage() {
                         <div className="my-5 h-px bg-[#106140]/10" />
 
                         {/* Partners */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="flex items-center gap-4 p-4 rounded-xl bg-gray-50">
+                        <div className="grid grid-cols-1 md:grid-cols-1">
+                        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
+                            {/* <div className="flex items-center gap-4 p-4 rounded-xl bg-gray-50">
                                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#106140]/10">
                                     <Image
                                         src="/tanoto-logo-white-bg.png"
@@ -74,7 +75,7 @@ export default function TentangPage() {
                                         Mitra Pengembangan Program
                                     </p>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="flex items-center gap-4 p-4 rounded-xl bg-gray-50">
                                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#106140]/10">
                                     <Image
