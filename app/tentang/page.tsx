@@ -83,7 +83,7 @@ export default function TentangPage() {
                                         alt="Dinas Kesehatan Kota Binjai Logo"
                                         width={35}
                                         height={35}
-                                        className="rounded-xl"
+                                        className="rounded-xl !m-0 !p-0"
                                     />
                                 </div>
                                 <div>
@@ -92,6 +92,25 @@ export default function TentangPage() {
                                     </p>
                                     <p className="text-xs text-gray-500 mt-0.5">
                                         Mitra Implementasi Program
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4 p-4 rounded-xl bg-gray-50">
+                                <div className="flex h-12 w-12 !p-0 !m-0 shrink-0 items-center justify-center rounded-xl bg-[#106140]/10">
+                                    <Image
+                                        src="/ecoxyztem-logo-rm-bg.png"
+                                        alt="Ecoxyztem Venture Builder Logo"
+                                        width={48}
+                                        height={25}
+                                        className="rounded-xl !m-0 !p-0"
+                                    />
+                                </div>
+                                <div>
+                                    <p className="text-sm font-bold text-gray-900">
+                                        Ecoxyztem Venture Builder
+                                    </p>
+                                    <p className="text-xs text-gray-500 mt-0.5">
+                                        Mitra Pendukung Pengembangan Program
                                     </p>
                                 </div>
                             </div>
