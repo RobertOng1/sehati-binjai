@@ -7,6 +7,8 @@ const categoryIcons: Record<string, string> = {
   baduta: "child_care",
   mpasi: "restaurant",
   "info-tambahan": "info",
+  ayah: "man",
+  "resep-microgreen": "eco",
 };
 
 const categoryColors: Record<string, string> = {
@@ -14,6 +16,8 @@ const categoryColors: Record<string, string> = {
   baduta: "#e0f2fe",
   mpasi: "#fef3c7",
   "info-tambahan": "#f3e8ff",
+  ayah: "#e0e7ff",
+  "resep-microgreen": "#dcfce7",
 };
 
 const categoryIconColors: Record<string, string> = {
@@ -21,14 +25,22 @@ const categoryIconColors: Record<string, string> = {
   baduta: "#0284c7",
   mpasi: "#d97706",
   "info-tambahan": "#7c3aed",
+  ayah: "#4f46e5",
+  "resep-microgreen": "#16a34a",
 };
 
 const categoryDescriptions: Record<string, string> = {
   "ibu-hamil": "Tips nutrisi & kesehatan selama masa kehamilan.",
   baduta: "Panduan tumbuh kembang anak di bawah 2 tahun.",
-  mpasi: "Resep dan jadwal pemberian makanan pendamping.",
-  "info-tambahan": "Informasi umum lainnya seputar stunting.",
+  mpasi: "Kumpulan resep bergizi, murah, dan jadwal makan harian si Kecil.",
+  "info-tambahan": "Informasi umum lainnya seputar stunting dan microgreen.",
+  ayah: "Peran Ayah mencegah stunting dan mendukung si Kecil.",
+  "resep-microgreen": "Beragam resep lezat mengolah microgreen di rumah.",
 };
+
+const orderedCategories = ["ibu-hamil", "ayah", "baduta", "mpasi", "resep-microgreen", "info-tambahan"]
+  .map(slug => categories.find(c => c.slug === slug))
+  .filter((c): c is NonNullable<typeof c> => c !== undefined);
 
 export default function HomePage() {
   return (
@@ -57,21 +69,19 @@ export default function HomePage() {
         <div className="mx-5 mt-4 md:mx-0 md:mt-4 overflow-hidden rounded-2xl bg-gradient-to-br from-[#106140] to-[#1a8a5a] p-7 md:p-12 relative">
           <div className="relative z-10 max-w-md">
             <h2 className="text-2xl md:text-4xl font-extrabold text-white leading-tight">
-              Selamat Datang, <br />
-              Bunda!
+              Halo, Ayah & Bunda!
             </h2>
-            <p className="mt-3 text-sm md:text-base text-white/80 leading-relaxed max-w-[280px] md:max-w-[420px]">
-              Pantau perkembangan buah hati dan cegah stunting bersama kami
-              melalui edukasi dan nutrisi mandiri.
+            <p className="mt-3 text-sm md:text-base text-white/80 leading-relaxed max-w-[280px] md:max-w-[500px]">
+              Yuk, pantau tumbuh kembang si Kecil agar terbebas dari stunting. Temukan info kesehatan dan cara mudah penuhi gizi anak langsung dari rumah.
             </p>
             <Link
               href="/kalkulator"
-              className="mt-5 !pr-4 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#106140] shadow-md transition-transform hover:scale-[1.02] press-effect"
+              className="mt-5 !pr-4 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-xs md:text-sm font-semibold text-[#106140] shadow-md transition-transform hover:scale-[1.02] press-effect"
             >
               <span className="material-symbols-outlined text-[18px]">
                 calculate
               </span>
-              Cek Status Gizi Anak
+              Cek Berat & Tinggi Anak
             </Link>
           </div>
           {/* Decorative circles */}
@@ -83,10 +93,10 @@ export default function HomePage() {
         {/* Category Grid */}
         <div className="px-5 mt-10 md:px-0 md:mt-10">
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-bold text-gray-900">Artikel Edukasi</h3>
+            <h3 className="text-lg font-bold text-gray-900">Bacaan Bermanfaat untuk Ayah & Bunda</h3>
           </div>
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-            {categories.map((cat) => (
+          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+            {orderedCategories.map((cat) => (
               <Link
                 key={cat.slug}
                 href={`/kategori/${cat.slug}`}
@@ -119,10 +129,10 @@ export default function HomePage() {
         {/* Microgreen CTA */}
         <div className="px-5 mt-10 mb-6 md:px-0 md:mt-12">
           <h3 className="text-lg font-bold text-gray-900">
-            Budidaya Microgreens
+            Sayur Mini (Microgreen)
           </h3>
           <p className="text-sm text-gray-500 mt-1">
-            Kebutuhan nutrisi dari rumah sendiri
+            Gizi murah dan mudah dari rumah. Pelajari cara menanamnya di rumah dengan alat seadanya!
           </p>
           <Link
             href="/microgreen"

@@ -1,6 +1,6 @@
 import { BOYS_LFA, GIRLS_LFA, type ZScoreEntry } from "./who-zscore-data";
 
-export type StuntingStatus = "Normal" | "Berisiko Stunting" | "Stunting" | "Stunting Parah";
+export type StuntingStatus = "Pertumbuhan Optimal" | "Perlu Perhatian Ekstra" | "Butuh Pendampingan Gizi" | "Prioritas Cek Tumbuh Kembang";
 
 export interface CalculationResult {
     status: StuntingStatus;
@@ -9,26 +9,26 @@ export interface CalculationResult {
 }
 
 const STATUS_INFO: Record<StuntingStatus, { description: string; badgeClass: string }> = {
-    Normal: {
+    "Pertumbuhan Optimal": {
         description:
-            "Tinggi badan anak Anda sesuai dengan standar WHO untuk usianya. Tetap jaga pola makan bergizi dan pantau pertumbuhannya secara rutin.",
+            "Tumbuh kembang si Kecil saat ini terpantau baik. Pertahankan asupan gizi seimbangnya ya, Ayah & Bunda. Jangan lupa untuk terus rutin berkunjung ke Posyandu setiap bulan agar pertumbuhannya selalu terpantau optimal.",
         badgeClass: "badge-normal",
     },
-    "Berisiko Stunting": {
+    "Perlu Perhatian Ekstra": {
         description:
-            "Tinggi badan anak Anda mendekati batas bawah standar WHO. Perhatikan asupan gizi dan konsultasikan ke tenaga kesehatan untuk pemantauan lebih lanjut.",
+            "Pertumbuhan si Kecil saat ini butuh sedikit perhatian ekstra agar bisa mengejar tinggi idealnya. Yuk, Ayah & Bunda, kita perbaiki asupan nutrisinya dan jadwalkan kunjungan ke Posyandu untuk berkonsultasi langsung dengan ahlinya.",
         badgeClass: "badge-risk",
     },
-    Stunting: {
+    "Butuh Pendampingan Gizi": {
         description:
-            "Tinggi badan anak Anda berada di bawah standar WHO. Segera konsultasikan ke dokter atau bidan untuk mendapatkan penanganan gizi yang tepat.",
+            "Tinggi badan si Kecil saat ini tampak belum mencapai potensi maksimal untuk usianya. Jangan berkecil hati, mari Ayah & Bunda segera kunjungi Posyandu atau puskesmas terdekat agar tenaga kesehatan bisa mendampingi dan memberikan solusi nutrisi yang tepat.",
         badgeClass: "badge-stunting",
     },
-    "Stunting Parah": {
+    "Prioritas Cek Tumbuh Kembang": {
         description:
-            "Tinggi badan anak Anda jauh di bawah standar WHO. Kondisi ini memerlukan penanganan medis segera. Hubungi puskesmas atau rumah sakit terdekat.",
+            "Pertumbuhan si Kecil saat ini sangat membutuhkan pendampingan khusus agar ia bisa tumbuh sehat. Ayah & Bunda, yuk segera bawa si Kecil ke Posyandu atau puskesmas terdekat. Pemeriksaan ini sangat penting agar si Kecil segera mendapat penanganan gizi yang menyeluruh.",
         badgeClass: "badge-severe",
-    },
+    }
 };
 
 /**
@@ -60,13 +60,13 @@ function classifyHeight(entry: ZScoreEntry, heightCm: number): CalculationResult
     let status: StuntingStatus;
 
     if (heightCm < entry.SD_neg3) {
-        status = "Stunting Parah";
+        status = "Prioritas Cek Tumbuh Kembang";
     } else if (heightCm < entry.SD_neg2) {
-        status = "Stunting";
+        status = "Butuh Pendampingan Gizi";
     } else if (heightCm < entry.SD_neg1) {
-        status = "Berisiko Stunting";
+        status = "Perlu Perhatian Ekstra";
     } else {
-        status = "Normal";
+        status = "Pertumbuhan Optimal";
     }
 
     return {

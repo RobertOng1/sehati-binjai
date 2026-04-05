@@ -21,14 +21,6 @@ export const categories: Category[] = [
         articles: [
             {
                 id: "ih-1",
-                title: "Anemia Ibu Hamil Berakibat Stunting pada Anak Hingga Kematian Ibu",
-                summary:
-                    "Pemenuhan zat besi sangat krusial karena anemia pada ibu hamil akibat kekurangan asupan nutrisi merupakan cikal bakal anak mengalami stunting sejak dalam kandungan.",
-                url: "https://keslan.kemkes.go.id/view_artikel/2335/anemia-ibu-hamil-berakibat-stunting-pada-anak-hingga-kematian-ibu",
-                image: "https://images.unsplash.com/photo-1609220136736-443140cffec6?w=400&h=300&fit=crop",
-            },
-            {
-                id: "ih-2",
                 title: "Cegah Stunting Sejak dalam Masa Kehamilan",
                 summary:
                     "Ibu hamil wajib memastikan kebutuhan kalori makro serta mikro seperti kalsium, asam folat, dan zat besi terpenuhi secara adekuat setiap trimesternya agar pertumbuhan janin tidak terhambat.",
@@ -36,7 +28,7 @@ export const categories: Category[] = [
                 image: "https://images.unsplash.com/photo-1493894473891-10fc1e5dbd22?w=400&h=300&fit=crop",
             },
             {
-                id: "ih-3",
+                id: "ih-2",
                 title: "Hati-Hati, Anemia saat Hamil Tingkatkan Risiko Stunting pada Anak",
                 summary:
                     "Anemia defisiensi besi selama kehamilan memicu penurunan jumlah sel darah merah sehat pada ibu, yang secara langsung meningkatkan risiko gangguan pertumbuhan kerdil pada janin.",
@@ -44,12 +36,33 @@ export const categories: Category[] = [
                 image: "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?w=400&h=300&fit=crop",
             },
             {
-                id: "ih-4",
+                id: "ih-3",
                 title: "Kaitan Stunting Terhadap Kondisi Ibu yang Mengalami Anemia Saat Hamil",
                 summary:
                     "Pencegahan stunting paling mendasar dimulai dari menjaga kecukupan gizi alami ibu di masa kehamilan demi melindungi 1000 Hari Pertama Kehidupan (HPK) anak.",
                 url: "https://www.alodokter.com/komunitas/topic/apakah-anak-yg-lahir-dengan-keadaan-ibu-yg-anemia-bisa",
                 image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&h=300&fit=crop",
+            },
+            {
+                id: "ih-4",
+                title: "Nutrisi Kehamilan yang Tepat untuk Tumbuh Kembang Janin",
+                summary: "Panduan lengkap mengenai nutrisi penting yang dibutuhkan selama masa kehamilan untuk memastikan janin tumbuh sehat dan optimal.",
+                url: "https://www.alodokter.com/jangan-cemas-kita-bahas-nutrisi-ibu-hamil-di-sini",
+                image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=400&h=300&fit=crop",
+            },
+            {
+                id: "ih-5",
+                title: "Alasan Mengapa Diet Saat Hamil Sangat Tidak Disarankan",
+                summary: "Diet menurunkan berat badan saat hamil dapat membahayakan pasokan nutrisi penting bagi ibu dan mengganggu perkembangan janin.",
+                url: "https://www.alodokter.com/diet-ibu-hamil-nyatanya-tidak-disarankan",
+                image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=300&fit=crop",
+            },
+            {
+                id: "ih-6",
+                title: "Pencegahan Stunting Dimulai Sejak Masa Kehamilan",
+                summary: "Langkah-langkah krusial yang bisa dilakukan ibu hamil untuk mencegah risiko stunting pada anak bahkan sebelum mereka lahir.",
+                url: "https://www.alodokter.com/cara-mencegah-stunting-pada-anak-sejak-masa-kehamilan",
+                image: "https://images.unsplash.com/photo-1615766553246-9147b6d50e90?w=400&h=300&fit=crop",
             },
         ],
     },
@@ -90,6 +103,27 @@ export const categories: Category[] = [
                 url: "https://www.halodoc.com/artikel/ibu-ini-5-cara-ampuh-mencegah-stunting-pada-anak",
                 image: "https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?w=400&h=300&fit=crop",
             },
+            {
+                id: "bd-5",
+                title: "Mengenal Stunting: Ciri-ciri dan Dampaknya",
+                summary: "Ketahui apa itu stunting, tanda-tandanya pada anak, serta dampak jangka panjang terhadap kesehatan dan kecerdasannya.",
+                url: "https://www.alodokter.com/stunting",
+                image: "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400&h=300&fit=crop",
+            },
+            {
+                id: "bd-6",
+                title: "Lebih Jauh Memahami Kondisi Stunting pada Anak",
+                summary: "Pemahaman mengenai kondisi stunting, termasuk cara identifikasi dini dan penanganan yang tepat agar pertumbuhan anak kembali ke jalur normal.",
+                url: "https://www.alodokter.com/memahami-stunting-pada-anak?",
+                image: "https://images.unsplash.com/photo-1607129298528-bbc851079920?w=400&h=300&fit=crop",
+            },
+            {
+                id: "bd-7",
+                title: "Faktor Penyebab dan Risiko Bayi Lahir Stunting",
+                summary: "Berbagai faktor penyebab dan risiko yang membuat bayi terlahir dengan kondisi stunting dan intervensi yang dibutuhkan.",
+                url: "https://www.alodokter.com/bayi-lahir-stunting-faktor-penyebab-dan-risiko",
+                image: "https://images.unsplash.com/photo-1510154221590-ff63e90a136f?w=400&h=300&fit=crop",
+            },
         ],
     },
     {
@@ -129,6 +163,13 @@ export const categories: Category[] = [
                 url: "https://www.halodoc.com/artikel/contoh-menu-pmt-posyandu-balita-resep-lezat-dan-bergizi",
                 image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&h=300&fit=crop",
             },
+            {
+                id: "mp-5",
+                title: "Panduan Menu MPASI Bayi 6-12 Bulan untuk Pertumbuhan Optimal",
+                summary: "Rekomendasi menu dan tahapan pemberian MPASI bergizi sejak usia 6 bulan hingga setahun agar kebutuhan nutrisi anak tercukupi.",
+                url: "https://keluargaberimun.id/seputar-imunisasi/apa-saja-menu-mpasi-bayi-6-bulan-hingga-12-bulan-supaya-si-kecil-tumbuh-optimal",
+                image: "https://images.unsplash.com/photo-1514995669114-6081e934b693?w=400&h=300&fit=crop",
+            },
         ],
     },
     {
@@ -167,6 +208,76 @@ export const categories: Category[] = [
                     "Edukasi mengenai pola makan gizi seimbang, pola asuh yang penuh perhatian, serta pemeliharaan kebersihan air dan sanitasi adalah tiga pilar utama untuk menciptakan generasi bebas stunting.",
                 url: "https://ayosehat.kemkes.go.id/mengenal-3-tips-pencegahan-stunting",
                 image: "https://images.unsplash.com/photo-1510154221590-ff63e90a136f?w=400&h=300&fit=crop",
+            },
+            {
+                id: "it-5",
+                title: "Mengenal Microgreen dan Manfaat Kesehatannya yang Melimpah",
+                summary: "Tanaman mungil yang kaya akan nutrisi dan sangat bermanfaat untuk mendongkrak asupan gizi harian dalam pencegahan stunting.",
+                url: "https://www.halodoc.com/artikel/mengenal-microgreen-tanaman-mungil-dengan-manfaat-besar",
+                image: "https://images.unsplash.com/photo-1622463214111-b192a53371d2?w=400&h=300&fit=crop",
+            },
+            {
+                id: "it-6",
+                title: "Microgreen: Nutrisi Padat yang Sangat Praktis Ditanam di Rumah",
+                summary: "Panduan ringkas tentang betapa mudahnya membudidayakan microgreen sendiri sebagai sumber pangan bernutrisi padat keluarga.",
+                url: "https://www.halodoc.com/artikel/microgreen-nutrisi-padat-mudah-ditanam",
+                image: "https://images.unsplash.com/photo-1648128774225-b7cf04eb94c6?w=400&h=300&fit=crop",
+            },
+        ],
+    },
+    {
+        slug: "ayah",
+        name: "Ayah",
+        icon: "man",
+        articles: [
+            {
+                id: "ay-1",
+                title: "Waspada, Pajanan Asap Rokok Dapat Menyebabkan Anak Stunting",
+                summary: "Kebiasaan merokok di dekat anak tidak hanya merusak sistem pernapasan tetapi juga menghambat pertumbuhan yang berdampak pada stunting.",
+                url: "https://kemkes.go.id/eng/%20pajanan-rokok-sebabkan-anak-jadi-stunting",
+                image: "https://images.unsplash.com/photo-1760463502208-09e09b42bcfe?w=400&h=300&fit=crop",
+            },
+            {
+                id: "ay-2",
+                title: "Peran Ayah dalam Mensukseskan Pemberian ASI Eksklusif",
+                summary: "Dukungan ayah di rumah sangat berpengaruh terhadap kenyamanan dan kelancaran ibu dalam memberikan ASI eksklusif bagi sang buah hati.",
+                url: "https://ayosehat.kemkes.go.id/bagaimana-peran-ayah-selama-pemberian-asi-eksklusif-untuk-istri-di-rumah",
+                image: "https://images.unsplash.com/photo-1657912230175-8f502bc7addb?w=400&h=300&fit=crop",
+            },
+            {
+                id: "ay-3",
+                title: "Pentingnya Peran Sentral Ayah dalam Pencegahan Stunting",
+                summary: "Pencegahan stunting adalah tugas bersama; peran ayah dalam menjaga nutrisi keluarga dan sanitasi sama vitalnya dengan peran ibu.",
+                url: "https://stunting.go.id/bukan-hanya-ibu-peran-ayah-sangat-penting-dalam-pencegahan-stunting/",
+                image: "https://images.unsplash.com/photo-1605812830455-2fadc55bc4ba?w=400&h=300&fit=crop",
+            },
+            {
+                id: "ay-4",
+                title: "Ayah, Anda Berperan Sentral dalam Langkah Menanggulangi Stunting",
+                summary: "Keterlibatan aktif figur ayah dapat memberikan dorongan moril dan komitmen penuh keluarga untuk bersama menanggulangi permasalahan stunting.",
+                url: "https://disdikpora.bulelengkab.go.id/informasi/detail/artikel/ayah-anda-berperan-sentral-dalam-menanggulangi-stunting-58",
+                image: "https://images.unsplash.com/photo-1638927700243-8a431de19599?w=400&h=300&fit=crop",
+            },
+        ],
+    },
+    {
+        slug: "resep-microgreen",
+        name: "Resep Microgreen",
+        icon: "eco",
+        articles: [
+            {
+                id: "rm-1",
+                title: "Kumpulan Resep Microgreen Mudah untuk Keluarga",
+                summary: "Beragam kreasi resep praktis untuk menyajikan microgreen dengan lezat disukai oleh keluarga, termasuk untuk MPASI dan lauk sehat.",
+                url: "https://cookpad.com/id/cari/microgreen",
+                image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=300&fit=crop",
+            },
+            {
+                id: "rm-2",
+                title: "Berbagai Cara Mengolah Microgreen agar Tetap Nutrisius",
+                summary: "Tips sederhana memadukan microgreen dalam menu masakan sehari-hari dengan cara yang tepat agar kandungan nutrisinya tak hilang.",
+                url: "https://www.hipwee.com/tips/cara-olah-microgreen/",
+                image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop",
             },
         ],
     },

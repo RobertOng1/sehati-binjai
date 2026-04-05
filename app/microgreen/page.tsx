@@ -38,7 +38,7 @@ export default function MicrogreenPage() {
                         Cara Menanam Microgreen
                     </h2>
                     <p className="mt-4 text-sm md:text-base text-gray-500 leading-relaxed md:max-w-xl">
-                        Tahukah kamu? Microgreen memiliki konsentrasi nutrisi hingga 40 kali lipat lebih tinggi dibandingkan sayuran dewasa, menjadikannya solusi pangan padat gizi yang efektif untuk mencegah stunting pada anak.
+                        Tahukah Ayah & Bunda? Sayur mini (microgreen) ini punya vitamin dan gizi hingga 40 kali lipat lebih tinggi dibandingkan sayuran biasa, lho! Cara tanamnya juga sangat gampang, murah, dan sangat bagus untuk bantu cegah stunting pada si Kecil.
                     </p>
                 </div>
 

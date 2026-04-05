@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 
 const tabs = [
     { href: "/", label: "Beranda", icon: "home" },
-    { href: "/microgreen", label: "Microgreen", icon: "eco" },
-    { href: "/kalkulator", label: "Kalkulator", icon: "calculate" },
-    { href: "/tentang", label: "Tentang Kami", icon: "group" },
+    { href: "/microgreen", label: "Sayur Mini (Microgreen)", icon: "eco" },
+    { href: "/kalkulator", label: "Cek Gizi Anak", icon: "calculate" },
+    { href: "/tentang", label: "Siapa Kami", icon: "group" },
 ];
 
 export default function SideNav() {

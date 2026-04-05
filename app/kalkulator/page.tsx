@@ -12,24 +12,24 @@ import {
 } from "@/lib/calculator";
 
 const statusColors: Record<StuntingStatus, string> = {
-    Normal: "#16a34a",
-    "Berisiko Stunting": "#d97706",
-    Stunting: "#ea580c",
-    "Stunting Parah": "#dc2626",
+    "Pertumbuhan Optimal": "#16a34a",
+    "Perlu Perhatian Ekstra": "#d97706",
+    "Butuh Pendampingan Gizi": "#ea580c",
+    "Prioritas Cek Tumbuh Kembang": "#dc2626",
 };
 
 const statusBgColors: Record<StuntingStatus, string> = {
-    Normal: "#dcfce7",
-    "Berisiko Stunting": "#fef3c7",
-    Stunting: "#ffedd5",
-    "Stunting Parah": "#fee2e2",
+    "Pertumbuhan Optimal": "#dcfce7",
+    "Perlu Perhatian Ekstra": "#fef3c7",
+    "Butuh Pendampingan Gizi": "#ffedd5",
+    "Prioritas Cek Tumbuh Kembang": "#fee2e2",
 };
 
 const statusDotColors: Record<StuntingStatus, string> = {
-    Normal: "#22c55e",
-    "Berisiko Stunting": "#f59e0b",
-    Stunting: "#f97316",
-    "Stunting Parah": "#ef4444",
+    "Pertumbuhan Optimal": "#22c55e",
+    "Perlu Perhatian Ekstra": "#f59e0b",
+    "Butuh Pendampingan Gizi": "#f97316",
+    "Prioritas Cek Tumbuh Kembang": "#ef4444",
 };
 
 export default function KalkulatorPage() {
@@ -98,7 +98,7 @@ export default function KalkulatorPage() {
                             </span>
                         </Link>
                         <h1 className="text-lg font-bold text-gray-900">
-                            Kalkulator Stunting
+                            Cek Tumbuh Kembang Anak
                         </h1>
                     </div>
                 </div>
@@ -122,7 +122,7 @@ export default function KalkulatorPage() {
                                         Data Pertumbuhan Anak
                                     </h2>
                                     <p className="text-xs text-gray-500 mt-0.5">
-                                        Masukkan data terbaru untuk memantau status gizi buah hati Anda.
+                                        Masukkan umur dan tinggi badan terbaru si Kecil untuk memantau pertumbuhannya.
                                     </p>
                                 </div>
                             </div>
@@ -162,7 +162,8 @@ export default function KalkulatorPage() {
                                     <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
                                         Usia (Bulan)
                                     </label>
-                                    <div className="relative mt-2.5">
+                                    <p className="text-xs text-gray-400 mt-0.5">Misal: Jika berusia 1 tahun, ketik 12</p>
+                                    <div className="flex items-center mt-2.5 rounded-xl border overflow-hidden pr-3 h-12 bg-gray-50 focus-within:ring-2 focus-within:ring-[#106140]/30 focus-within:border-[#106140] border-gray-200 has-[input.error]:border-red-400 has-[input.error]:bg-red-50">
                                         <input
                                             type="number"
                                             min="0"
@@ -179,12 +180,9 @@ export default function KalkulatorPage() {
                                                 }
                                             }}
                                             placeholder="0 – 60"
-                                            className={`w-full h-12 rounded-xl border ${ageError
-                                                ? "border-red-400 bg-red-50"
-                                                : "border-gray-200 bg-gray-50"
-                                                } px-4 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#106140]/30 focus:border-[#106140]`}
+                                            className={`flex-1 h-full bg-transparent px-4 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none ${ageError ? "error" : ""}`}
                                         />
-                                        <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-400">Bulan</span>
+                                        <span className="text-xs text-gray-400 shrink-0">Bulan</span>
                                     </div>
                                     {ageError && (
                                         <p className="mt-1.5 text-xs text-red-500">{ageError}</p>
@@ -194,7 +192,8 @@ export default function KalkulatorPage() {
                                     <label className="text-xs font-semibold text-gray-500 tracking-wider">
                                         TINGGI BADAN (cm)
                                     </label>
-                                    <div className="relative mt-2.5">
+                                    <p className="text-xs text-gray-400 mt-0.5">Dalam satuan sentimeter</p>
+                                    <div className="flex items-center mt-2.5 rounded-xl border h-12 bg-gray-50 border-gray-200 focus-within:ring-2 focus-within:ring-[#106140]/30 focus-within:border-[#106140]">
                                         <input
                                             type="number"
                                             step="0.1"
@@ -207,10 +206,10 @@ export default function KalkulatorPage() {
                                                     e.preventDefault();
                                                 }
                                             }}
-                                            placeholder="Contoh: 75.5"
-                                            className="w-full h-12 rounded-xl border border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#106140]/30 focus:border-[#106140]"
+                                            placeholder="Contoh: 75,5"
+                                            className="flex-1 min-w-0 h-full bg-transparent pl-4 pr-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none"
                                         />
-                                        <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-400">cm</span>
+                                        <span className="text-xs text-gray-400 shrink-0 pr-3">cm</span>
                                     </div>
                                 </div>
                             </div>
@@ -219,12 +218,12 @@ export default function KalkulatorPage() {
                             <button
                                 onClick={handleCalculate}
                                 disabled={!age || !height}
-                                className="mt-6 w-full flex items-center justify-center gap-2 rounded-xl bg-[#106140] py-4 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#0a4a30] disabled:opacity-40 disabled:cursor-not-allowed press-effect"
+                                className="mt-6 w-full flex items-center justify-center gap-2 rounded-xl bg-[#106140] px-6 py-4 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#0a4a30] disabled:opacity-40 disabled:cursor-not-allowed press-effect"
                             >
-                                <span className="material-symbols-outlined text-[18px]">
+                                <span className="material-symbols-outlined text-[18px] leading-none">
                                     calculate
                                 </span>
-                                Hitung Status Gizi
+                                <span>Lihat Hasilnya</span>
                             </button>
                         </div>
 
@@ -247,17 +246,17 @@ export default function KalkulatorPage() {
                                             color: statusColors[result.status],
                                         }}
                                     >
-                                        {result.status === "Normal"
+                                        {result.status === "Pertumbuhan Optimal"
                                             ? "Sehat"
-                                            : result.status === "Berisiko Stunting"
+                                            : result.status === "Perlu Perhatian Ekstra"
                                                 ? "Perhatian"
-                                                : result.status === "Stunting"
+                                                : result.status === "Butuh Pendampingan Gizi"
                                                     ? "Waspada"
-                                                    : "Bahaya"}
+                                                    : "Penting"}
                                     </span>
                                 </div>
                                 <div
-                                    className="mt-4 rounded-xl p-4"
+                                    className="mt-5 rounded-xl p-5"
                                     style={{
                                         backgroundColor: statusBgColors[result.status] + "80",
                                     }}
@@ -280,9 +279,7 @@ export default function KalkulatorPage() {
                                 <div>
                                     <p className="text-sm font-bold text-amber-900">Tips Pengukuran</p>
                                     <p className="mt-1.5 text-sm text-amber-800/80 leading-relaxed">
-                                        Bagi anak berusia di bawah 2 tahun, posisikan anak berbaring terlentang sebelum mengambil pengukuran.
-                                        <br />Bagi anak berusia di atas 2 tahun, pastikan anak diukur tanpa alas kaki dan berdiri tegak
-                                        menempel pada alat ukur untuk hasil yang lebih akurat.
+                                        Untuk anak yang umurnya di bawah 2 tahun, ukur panjang badannya dengan cara ditidurkan lurus (berbaring telentang) ya.
                                     </p>
                                 </div>
                             </div>
@@ -296,7 +293,7 @@ export default function KalkulatorPage() {
                                 <div className="flex items-center gap-2">
                                     <span className="material-symbols-outlined text-gray-400 text-[20px]">history</span>
                                     <h3 className="text-base font-bold text-gray-900">
-                                        Riwayat Pengukuran
+                                        Catatan Tumbuh Kembang
                                     </h3>
                                 </div>
                                 {records.length > 3 && (
@@ -315,10 +312,10 @@ export default function KalkulatorPage() {
                                         monitoring
                                     </span>
                                     <p className="mt-3 text-sm font-medium text-gray-400">
-                                        Belum ada riwayat
+                                        Belum ada catatan
                                     </p>
                                     <p className="text-xs text-gray-300 mt-1.5 max-w-[200px] leading-relaxed">
-                                        Mulai hitung status gizi anak Anda untuk melihat riwayat pertumbuhan di sini.
+                                        Yuk, masukkan usia dan tinggi badan si Kecil sekarang untuk mulai memantau pertumbuhannya!
                                     </p>
                                 </div>
                             ) : (
