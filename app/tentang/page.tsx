@@ -156,6 +156,45 @@ export default function TentangPage() {
                             <span>Dibuat dengan cinta untuk masyarakat Kota Binjai</span>
                         </div>
                     </div>
+
+                    {/* Add to Homescreen Section */}
+                    <div className="mt-5" dangerouslySetInnerHTML={{ __html: `
+                        <div class="rounded-2xl bg-white p-6 md:p-8 shadow-sm border border-gray-100">
+                            <div class="flex items-center gap-4">
+                                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#106140]/10 text-[#106140]">
+                                    <span class="material-symbols-outlined text-[24px]">
+                                        install_mobile
+                                    </span>
+                                </div>
+                                <div>
+                                    <p class="text-base font-bold text-gray-900">Tambahkan ke Layar Beranda</p>
+                                    <p class="text-sm text-gray-500 mt-0.5">Akses Sehati Binjai lebih cepat langsung dari layar beranda Anda.</p>
+                                </div>
+                            </div>
+                            <button onclick="window.installApp()" class="mt-5 w-full flex items-center justify-center gap-2 rounded-xl bg-[#106140] px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-[#0c4a30] active:scale-[0.98]">
+                                <span class="material-symbols-outlined text-[18px]">add_to_home_screen</span>
+                                Pasang Sekarang
+                            </button>
+                        </div>
+                        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" style="display:none;" onload="
+                            if (!window.installScriptAdded) {
+                                window.installScriptAdded = true;
+                                window.addEventListener('beforeinstallprompt', function(e) {
+                                    e.preventDefault();
+                                    window.deferredPrompt = e;
+                                });
+                                window.installApp = async function() {
+                                    if (window.deferredPrompt) {
+                                        try {
+                                            await window.deferredPrompt.prompt();
+                                        } catch (error) {
+                                            console.error('Install prompt error:', error);
+                                        }
+                                    }
+                                };
+                            }
+                        " />
+                    ` }} />
                 </div>
             </div>
         </div>
